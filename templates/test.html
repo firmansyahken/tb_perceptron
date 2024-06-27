@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="wrapper">
+  <h1 class="h2">Klasifikasi Penyakit TB <br>Dengan Metode Perceptron</h1>
+  <form action="{{ url_for('Classification')}}" method="post">
+    <div class="form">
+      <div class="input-group">
+        <label class="label">Umur</label>
+        <input type="number" name="umur" placeholder="umur" required />
+      </div>
+      <div class="input-group">
+        <label class="label">Jenis Kelamin</label>
+        <select name="jenis_kelamin">
+          <option value="1">Laki-laki</option>
+          <option value="0">Perempuan</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="label">Foto Toraks</label>
+        <select name="foto_toraks">
+          <option value="1">Positif</option>
+          <option value="0">Negatif</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="label">Status HIV</label>
+        <select name="status_hiv">
+          <option value="1">Positif</option>
+          <option value="0">Negatif</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="label">Riwayat Diabetes</label>
+        <select name="riwayat_diabetes">
+          <option value="1">Ya</option>
+          <option value="0">Tidak</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="label">Hasil TCM</label>
+        <select name="hasil_tcm">
+          <option value="2">Rif Resisten</option>
+          <option value="0">Negatif</option>
+          <option value="1">Rif Sensitif</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

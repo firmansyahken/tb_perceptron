@@ -63,10 +63,10 @@ print("Confusion Matrix:")
 print(confusion)
 
 # Dump model
-model_data = {
-    'model': perceptron,
-    'min_umur': min_umur,
-    'max_umur': max_umur
-}
+# model_data = {
+#     'model': perceptron,
+#     'min_umur': min_umur,
+#     'max_umur': max_umur
+# }
 
-pickle.dump(model_data, open("model.pkl", "wb"))
+# pickle.dump(model_data, open("model.pkl", "wb"))

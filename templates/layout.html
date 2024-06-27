@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Website notebook Perceptron Classfication Dataset TB">
+    <title>Kecerdasan Komputasi</title>
+    <link rel="shortcut icon" href="https://www.kindpng.com/picc/m/75-751126_icon-clipart-png-download-data-science-logo-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='jp.css') }}" />
+  </head>
+  <body>
+
+    <div class="navbar">
+      <div class="navbar_container">
+        <h1>Kecerdasan Komputasi</h1>
+        <div class="link">
+          <a href="{{ url_for('Home') }}" class="{% if request.endpoint == 'Home' %}active{% endif %}">Home</a>
+          <a href="{{ url_for('Preprocessing') }}" class="{% if request.endpoint == 'Preprocessing' %}active{% endif %}">Preprocessing</a>
+          <a href="{{ url_for('Modeling') }}" class="{% if request.endpoint == 'Modeling' %}active{% endif %}">Modeling</a>
+          <a href="{{ url_for('Test') }}" class="{% if request.endpoint == 'Test' %}active{% endif %}">Implementation</a>
+        </div>
+        <div>
+          <a href="https://github.com/firmansyahken">Fork</a>
+          <img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="logo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar_mobile">
+      <h1>Kecerdasan Komputasi</h1>
+      <div>
+        <a href="https://github.com/firmansyahken">
+          <img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="logo"
+          />
+        </a>
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="{{ url_for('Home') }}" class="{% if request.endpoint == 'Home' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('Preprocessing') }}" class="{% if request.endpoint == 'Preprocessing' %}active{% endif %}">Preprocessing</a>
+      <a href="{{ url_for('Modeling') }}" class="{% if request.endpoint == 'Modeling' %}active{% endif %}">Modeling</a>
+      <a href="{{ url_for('Test') }}" class="{% if request.endpoint == 'Test' %}active{% endif %}">Implementation</a>
+    </div>
+
+    <div class="container">
+      <div class="aside">
+        <div class="profile">
+
+          <img src="https://incode022.github.io/static/media/infor.f0df981daae3194300921ef43a5d7d70.svg" alt="logo">
+          <h2>Kelompok 2</h2>
+          <div>
+            <p>220411100044</p>
+            <p>Wahyudi Firmansyah</p>
+          </div>
+          <div>
+            <p>220411100163</p>
+            <p>Ramadhan Dwi Rizki Prayogi</p>
+          </div>
+          <div>
+            <p>220411100097</p>
+            <p>Naufal Alifiansyah Sc</p>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <div class="footer">
+      <p>Created By Kelompok2</p>
+      <p>Powered By Flask</p>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const menu = document.querySelector(".menu");
+      hamburger.addEventListener("click", function() {
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      })
+    </script>
+  </body>
+</html>

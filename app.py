@@ -13,6 +13,22 @@ max_umur = models['max_umur']
 def Home():
     return render_template("index.html")
 
+@app.route("/requirements")
+def Requirements():
+    return render_template("requirements.html")
+
+@app.route("/preprocessing")
+def Preprocessing():
+    return render_template("preprocessing.html")
+
+@app.route("/modeling")
+def Modeling():
+    return render_template("modeling.html")
+
+@app.route("/test")
+def Test():
+    return render_template("test.html")
+
 @app.route("/classification", methods=["POST"])
 def Classification():
     req = request.form.values()
@@ -31,6 +47,6 @@ def Classification():
          result = "Paru"
     else:
         result = "Ekstra Paru"
-    return render_template("result.html", result_text = result)
+    return render_template("result.html", result_text = result, req_text=request.form.values())
 if __name__ == "__main__":
     app.run(debug=True)
